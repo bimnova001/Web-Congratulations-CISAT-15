@@ -1,0 +1,21 @@
+{
+  "name": "graduation-congrats-app",
+  "version": "1.0.0",
+  "description": "A web application to display a congratulatory message for graduation with attractive design and animations.",
+  "main": "src/app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "graduation",
+    "congratulations",
+    "web",
+    "animation"
+  ],
+  "author": "Your Name",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

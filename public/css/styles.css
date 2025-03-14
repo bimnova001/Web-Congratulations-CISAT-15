@@ -1,0 +1,159 @@
+body {
+    background: linear-gradient(270deg, #fff, #ff8000, #591000);
+    background-size: 200% 200%;
+    font-family: Arial, sans-serif;
+    text-align: center;
+    padding: 50px;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden;
+    animation: gradientAnimation 5s infinite alternate ease-in-out;
+    will-change: background;
+}
+
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 50% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
+
+.background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;  /* -1 ให้ภาพอยู่ด้านหลัง */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.happy-image {
+    width: 600px; /* ปรับขนาดของภาพให้เล็กลงตามต้องการ */
+    height: auto;
+    position: absolute;
+    display: none; /* ซ่อนภาพเริ่มต้น */
+}
+.container {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 1s;
+    max-width: 1200px; /* จำกัดขนาดสูงสุดเมื่อบนหน้าจอใหญ่ */
+    margin: 0 auto;
+}
+
+.graduation-image {
+    max-width: 90px;
+    min-width: 10px;
+    height: auto;
+    margin-bottom: 20px;
+    animation: fadeIn 2s
+}
+
+.congrats-message {
+    font-size: 2.2em;
+    color: #ff6600;
+    margin-bottom: 20px;
+    animation: fadeIn 2s;
+    width: 100%;  /* ขยายให้เต็มพื้นที่ */
+    text-align: center;
+}
+.sub-me {
+    font-size: 1.2em;
+    background: linear-gradient(270deg, #ff8000, #591000, #000dff, #ff0000);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* ทำให้ข้อความใช้ gradient */
+    animation: gradientAnimation 5s infinite alternate ease-in-out, fadeIn 2s;
+    margin-bottom: 30px;
+    width: 100%;  
+    text-align: center;
+    will-change: background-position; /* ทำให้เปลี่ยนสีได้เร็วขึ้น */
+}
+.sub-message {
+    font-size: 1.2em;
+    background: linear-gradient(270deg, #ff8000, #591000, #000dff, #ff0000);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent; /* ทำให้ข้อความใช้ gradient */
+    animation: gradientAnimation 5s infinite alternate ease-in-out, fadeIn 2s;
+    margin-bottom: 30px;
+    width: 100%;  
+    text-align: center;
+    will-change: background-position; /* ทำให้เปลี่ยนสีได้เร็วขึ้น */
+}
+
+.celebrate-button {
+    background-color: #ff6600;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+    animation: fadeIn 2s;
+}
+
+.celebrate-button:hover {
+    background-color: #460b00;
+    transform: scale(1.1);
+}
+.card {
+    display: none;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    animation: slideIn 2s forwards;
+    margin: 0 auto;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@media screen and (max-width: 767px) {
+    /* จะไม่มีการปรับเปลี่ยน layout ในมือถือ */
+    .container {
+        padding: 20px;
+    }
+
+    .happy-image {
+        width: 150px;  /* ขนาดของรูปภาพจะเหมือนกันทั้งในมือถือและคอม */
+    }
+
+    .celebrate-button {
+        font-size: 20px;
+        padding: 12px 24px;
+    }
+}
